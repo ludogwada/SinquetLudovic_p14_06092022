@@ -1,0 +1,12 @@
+.navBar {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__link {
+        text-decoration: none;
+        color: black;
+        padding: 5px;
+        border: 2px solid $Color-1;
+        border-radius: 20px;
+    }
+}
