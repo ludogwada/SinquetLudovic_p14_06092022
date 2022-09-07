@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createEmployee } from '../utils/slice/Slice';
 
 const CreateEmployee = () => {
 	const [firstName, setFirstName] = useState(null);
-	const [LastName, setLastName] = useState(null);
-	const [DateBirth, setDateBirth] = useState(null);
-	const [DateStart, setDateStart] = useState(null);
+	const [lastName, setLastName] = useState(null);
+	const [dateBirth, setDateBirth] = useState(null);
+	const [dateStart, setDateStart] = useState(null);
 	const [street, setStreet] = useState(null);
 	const [city, setCity] = useState(null);
 	const [state, setState] = useState(null);
 	const [zipCode, setZipCode] = useState(null);
 	const [departement, setDepartement] = useState(null);
 
+	const dispatch = useDispatch();
+
 	const SaveUser = (e) => {
 		e.preventDefault();
-		console.log(
-			firstName,
-			LastName,
-			DateBirth,
-			DateStart,
-			street,
-			city,
-			state,
-			zipCode,
-			departement
-		);
+		const createdEmployee = {
+			firstName: firstName,
+			lastName: lastName,
+			dateBirth: dateBirth,
+			dateStart: dateStart,
+			street: street,
+			city: city,
+			state: state,
+			zipCode: zipCode,
+			departement: departement,
+		};
+		console.log(createdEmployee);
+		dispatch(createEmployee(createdEmployee));
 	};
 
 	return (
@@ -37,27 +43,27 @@ const CreateEmployee = () => {
 						onChange={(e) => setFirstName(e.target.value)}
 					/>
 				</label>
-				<label htmlFor='LastName'>
+				<label htmlFor='lastName'>
 					Last Name
 					<input
 						type='text'
-						name='LastName'
+						name='lastName'
 						onChange={(e) => setLastName(e.target.value)}
 					/>
 				</label>
-				<label htmlFor='DateBirth'>
-					DateBirth
+				<label htmlFor='dateBirth'>
+					dateBirth
 					<input
 						type='date'
-						name='DateBirth'
+						name='dateBirth'
 						onChange={(e) => setDateBirth(e.target.value)}
 					/>
 				</label>
-				<label htmlFor='DateStart'>
-					DateStart
+				<label htmlFor='dateStart'>
+					dateStart
 					<input
 						type='date'
-						name='DateStart'
+						name='dateStart'
 						onChange={(e) => setDateStart(e.target.value)}
 					/>
 				</label>
