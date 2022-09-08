@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createEmployee } from '../utils/slice/Slice';
+import StateLocation from '../datas/StateLocation.json';
+import Departement from '../datas/Departement.json';
 
 const CreateEmployee = () => {
-	const [firstName, setFirstName] = useState(null);
-	const [lastName, setLastName] = useState(null);
-	const [dateBirth, setDateBirth] = useState(null);
-	const [dateStart, setDateStart] = useState(null);
-	const [street, setStreet] = useState(null);
-	const [city, setCity] = useState(null);
-	const [state, setState] = useState(null);
-	const [zipCode, setZipCode] = useState(null);
-	const [departement, setDepartement] = useState(null);
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [dateBirth, setDateBirth] = useState('');
+	const [dateStart, setDateStart] = useState('');
+	const [street, setStreet] = useState('');
+	const [city, setCity] = useState('');
+	const [state, setState] = useState('');
+	const [zipCode, setZipCode] = useState('');
+	const [departement, setDepartement] = useState('');
+	const form = document.getElementById('form');
 
 	const dispatch = useDispatch();
 
@@ -30,11 +33,12 @@ const CreateEmployee = () => {
 		};
 		console.log(createdEmployee);
 		dispatch(createEmployee(createdEmployee));
+		form.reset(e);
 	};
 
 	return (
 		<div className='container'>
-			<form className='form'>
+			<form id='form' className='form' onSubmit={SaveUser}>
 				<label htmlFor='FirstName'>
 					Fisrt Name
 					<input
@@ -86,11 +90,15 @@ const CreateEmployee = () => {
 					</label>
 					<label htmlFor='State'>
 						State
-						<input
-							type='text'
-							name='State'
-							onChange={(e) => setState(e.target.value)}
-						/>
+						<select value={state} onChange={(e) => setState(e.target.value)}>
+							{StateLocation.map((location, index) => {
+								return (
+									<option key={index} value={location.abbreviation}>
+										{location.name}
+									</option>
+								);
+							})}
+						</select>
 					</label>
 					<label htmlFor='ZipCode'>
 						Zip Code
@@ -103,15 +111,19 @@ const CreateEmployee = () => {
 				</section>
 				<label htmlFor='Departement'>
 					Departement
-					<input
-						type='text'
-						name='Departement'
-						onChange={(e) => setDepartement(e.target.value)}
-					/>
+					<select
+						value={departement}
+						onChange={(e) => setDepartement(e.target.value)}>
+						{Departement.map((dept, index) => {
+							return (
+								<option key={index} value={dept.departement}>
+									{dept.departement}
+								</option>
+							);
+						})}
+					</select>
 				</label>
-				<button className='form__button' onClick={SaveUser}>
-					Save New User
-				</button>
+				<button className='form__button'>Save New User</button>
 			</form>
 		</div>
 	);

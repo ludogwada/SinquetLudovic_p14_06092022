@@ -9,8 +9,8 @@ const EmployeeList = () => {
 		<>
 			<div className='container'>EmployeeList</div>
 			<ul>
-				{list.map((user) => (
-					<li>
+				{list.map((user, index) => (
+					<li key={index}>
 						{user.firstName}, {user.lastName}
 					</li>
 				))}
