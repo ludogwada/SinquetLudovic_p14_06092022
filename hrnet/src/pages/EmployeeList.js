@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Table } from '../components/table/Table';
 
 const EmployeeList = () => {
 	const list = useSelector((state) => state.employee);
@@ -15,6 +16,7 @@ const EmployeeList = () => {
 					</li>
 				))}
 			</ul>
+			<Table />
 		</>
 	);
 };
