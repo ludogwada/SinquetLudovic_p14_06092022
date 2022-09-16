@@ -1,4 +1,4 @@
-import { useTable, usePagination } from 'react-table';
+import { useTable, usePagination, useSortBy } from 'react-table';
 import React from 'react';
 
 export function Table() {
@@ -23,12 +23,49 @@ export function Table() {
 	const columns = React.useMemo(
 		() => [
 			{
-				Header: 'Column 1',
+				Header: 'First Name',
 				accessor: 'col1', // accessor is the "key" in the data
+				sortType: 'basic',
 			},
 			{
-				Header: 'Column 2',
+				Header: 'Last Name',
 				accessor: 'col2',
+				sortType: 'basic',
+			},
+			{
+				Header: 'Start Date',
+				accessor: 'col3',
+				sortType: 'basic',
+			},
+			{
+				Header: 'Departement',
+				accessor: 'col4',
+				sortType: 'basic',
+			},
+			{
+				Header: 'Date of Birth',
+				accessor: 'col5',
+				sortType: 'basic',
+			},
+			{
+				Header: 'Street',
+				accessor: 'col6',
+				sortType: 'basic',
+			},
+			{
+				Header: 'City',
+				accessor: 'col7',
+				sortType: 'basic',
+			},
+			{
+				Header: 'State',
+				accessor: 'col8',
+				sortType: 'basic',
+			},
+			{
+				Header: 'Zip Code',
+				accessor: 'col9',
+				sortType: 'basic',
 			},
 		],
 		[]
@@ -49,7 +86,7 @@ export function Table() {
 		setPageSize,
 		canPreviousPage,
 		canNextPage,
-	} = useTable({ columns, data }, usePagination);
+	} = useTable({ columns, data }, useSortBy, usePagination);
 
 	return (
 		<div>
@@ -59,7 +96,7 @@ export function Table() {
 						<tr {...headerGroup.getHeaderGroupProps()}>
 							{headerGroup.headers.map((column) => (
 								<th
-									{...column.getHeaderProps()}
+									{...column.getHeaderProps(column.getSortByToggleProps())}
 									style={{
 										borderBottom: 'solid 3px red',
 										background: 'aliceblue',
@@ -67,6 +104,7 @@ export function Table() {
 										fontWeight: 'bold',
 									}}>
 									{column.render('Header')}
+									<span>{column.isSortedDesc ? ' 🔽' : ' 🔼'}</span>
 								</th>
 							))}
 						</tr>
