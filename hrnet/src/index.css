@@ -356,6 +356,10 @@ template {
   border-radius: 20px;
 }
 
+.datePicker {
+  width: 450px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
