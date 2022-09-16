@@ -1,4 +1,9 @@
-import { useTable, usePagination, useSortBy } from 'react-table';
+import {
+	useTable,
+	usePagination,
+	useSortBy,
+	useGlobalFilter,
+} from 'react-table';
 import React from 'react';
 
 export function Table() {
@@ -78,18 +83,28 @@ export function Table() {
 		rows,
 		prepareRow,
 		pageOptions,
+		setGlobalFilter,
 		page,
-		state: { pageIndex, pageSize },
+		state: { pageIndex, pageSize, globalFilter },
 		gotoPage,
 		previousPage,
 		nextPage,
 		setPageSize,
 		canPreviousPage,
 		canNextPage,
-	} = useTable({ columns, data }, useSortBy, usePagination);
+	} = useTable({ columns, data }, useGlobalFilter, useSortBy, usePagination);
+
+	React.useEffect(() => {
+		console.log(globalFilter);
+	}, [globalFilter]);
 
 	return (
 		<div>
+			<input
+				type='text'
+				value={globalFilter || ''}
+				onChange={(e) => setGlobalFilter(e.target.value)}
+			/>
 			<table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
