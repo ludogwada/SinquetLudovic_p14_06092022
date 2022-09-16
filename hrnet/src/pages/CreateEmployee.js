@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createEmployee } from '../utils/slice/Slice';
-import StateLocation from '../datas/StateLocation.json';
-import Departement from '../datas/Departement.json';
+import { statesLocation } from '../datas/StatesLocation';
+import { departements } from '../datas/Departement';
+import ReactDatePicker from '../components/datePicker/DatePicker';
 
 const CreateEmployee = () => {
 	const [firstName, setFirstName] = useState('');
@@ -23,8 +24,8 @@ const CreateEmployee = () => {
 		const createdEmployee = {
 			firstName: firstName,
 			lastName: lastName,
-			dateBirth: dateBirth,
-			dateStart: dateStart,
+			dateBirth: dateBirth.toLocaleDateString(),
+			dateStart: dateStart.toLocaleDateString(),
 			street: street,
 			city: city,
 			state: state,
@@ -56,20 +57,12 @@ const CreateEmployee = () => {
 					/>
 				</label>
 				<label htmlFor='dateBirth'>
-					dateBirth
-					<input
-						type='date'
-						name='dateBirth'
-						onChange={(e) => setDateBirth(e.target.value)}
-					/>
+					DateBirth
+					<ReactDatePicker date={dateBirth} setDate={setDateBirth} />
 				</label>
 				<label htmlFor='dateStart'>
-					dateStart
-					<input
-						type='date'
-						name='dateStart'
-						onChange={(e) => setDateStart(e.target.value)}
-					/>
+					DateStart
+					<ReactDatePicker date={dateStart} setDate={setDateStart} />
 				</label>
 				<section className='form__adress'>
 					<label htmlFor='Street'>
@@ -91,7 +84,7 @@ const CreateEmployee = () => {
 					<label htmlFor='State'>
 						State
 						<select value={state} onChange={(e) => setState(e.target.value)}>
-							{StateLocation.map((location, index) => {
+							{statesLocation.map((location, index) => {
 								return (
 									<option key={index} value={location.abbreviation}>
 										{location.name}
@@ -114,7 +107,7 @@ const CreateEmployee = () => {
 					<select
 						value={departement}
 						onChange={(e) => setDepartement(e.target.value)}>
-						{Departement.map((dept, index) => {
+						{departements.map((dept, index) => {
 							return (
 								<option key={index} value={dept.departement}>
 									{dept.departement}
@@ -123,6 +116,7 @@ const CreateEmployee = () => {
 						})}
 					</select>
 				</label>
+
 				<button className='form__button'>Save New User</button>
 			</form>
 		</div>
