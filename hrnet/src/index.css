@@ -360,6 +360,24 @@ template {
   width: 450px;
 }
 
+.table__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.table__header__selectList {
+  border-radius: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.table__header__search {
+  margin-left: 5px;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
 .header {
   display: flex;
   flex-direction: column;

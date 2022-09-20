@@ -5,7 +5,6 @@ import {
 	useGlobalFilter,
 } from 'react-table';
 import React from 'react';
-
 export function Table() {
 	const data = React.useMemo(
 		() => [
@@ -84,7 +83,6 @@ export function Table() {
 		prepareRow,
 		pageOptions,
 		setGlobalFilter,
-		page,
 		state: { pageIndex, pageSize, globalFilter },
 		gotoPage,
 		previousPage,
@@ -99,13 +97,35 @@ export function Table() {
 	}, [globalFilter]);
 
 	return (
-		<div>
-			<input
-				type='text'
-				value={globalFilter || ''}
-				onChange={(e) => setGlobalFilter(e.target.value)}
-			/>
-			<table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
+		<article className='table'>
+			<header className='table__header'>
+				<section>
+					Show
+					<select
+						className='table__header__selectList'
+						value={pageSize}
+						onChange={(e) => {
+							setPageSize(Number(e.target.value));
+						}}>
+						{[10, 20, 30, 40, 50].map((pageSize) => (
+							<option key={pageSize} value={pageSize}>
+								{pageSize}
+							</option>
+						))}
+					</select>
+					entries
+				</section>
+				<section>
+					Search :
+					<input
+						className='table__header__search'
+						type='text'
+						value={globalFilter || ''}
+						onChange={(e) => setGlobalFilter(e.target.value)}
+					/>
+				</section>
+			</header>
+			<table {...getTableProps()} style={{ border: 'solid 1px grey' }}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
 						<tr {...headerGroup.getHeaderGroupProps()}>
@@ -113,13 +133,12 @@ export function Table() {
 								<th
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 									style={{
-										borderBottom: 'solid 3px red',
 										background: 'aliceblue',
 										color: 'black',
 										fontWeight: 'bold',
 									}}>
 									{column.render('Header')}
-									<span>{column.isSortedDesc ? ' 🔽' : ' 🔼'}</span>
+									<span>{column.isSortedDesc ? ' ⬆️' : ' ⬇️'}</span>
 								</th>
 							))}
 						</tr>
@@ -137,7 +156,7 @@ export function Table() {
 											style={{
 												padding: '10px',
 												border: 'solid 1px gray',
-												background: 'papayawhip',
+												background: '#e3f0ff',
 											}}>
 											{cell.render('Cell')}
 										</td>
@@ -170,18 +189,7 @@ export function Table() {
 						gotoPage(page);
 					}}
 				/>
-				<select
-					value={pageSize}
-					onChange={(e) => {
-						setPageSize(Number(e.target.value));
-					}}>
-					{[10, 20, 30, 40, 50].map((pageSize) => (
-						<option key={pageSize} value={pageSize}>
-							Show {pageSize}
-						</option>
-					))}
-				</select>
 			</div>
-		</div>
+		</article>
 	);
 }

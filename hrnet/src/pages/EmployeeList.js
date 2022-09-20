@@ -8,17 +8,20 @@ const EmployeeList = () => {
 	console.log(list);
 	return (
 		<>
-			<div className='container'>EmployeeList</div>
-			<ul>
-				{list.map((user, index) => (
-					<li key={index}>
-						{user.firstName}, {user.lastName}
-					</li>
-				))}
-			</ul>
-			<Table />
+			<div className='container'>
+				EmployeeList
+				<Table />
+			</div>
 		</>
 	);
 };
 
 export default EmployeeList;
+
+// <ul>
+// 	{list.map((user, index) => (
+// 		<li key={index}>
+// 			{user.firstName}, {user.lastName}
+// 		</li>
+// 	))}
+// </ul>
