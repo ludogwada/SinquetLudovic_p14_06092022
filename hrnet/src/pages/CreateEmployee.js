@@ -31,26 +31,26 @@ const CreateEmployee = () => {
 	const SaveUser = (e) => {
 		e.preventDefault();
 		if (
-			// firstName !== '' &&
-			// lastName !== '' &&
-			// dateBirth !== '' &&
-			// dateStart !== '' &&
-			// street !== '' &&
-			// city !== '' &&
-			// state !== '' &&
-			// zipCode !== '' &&
+			firstName !== '' &&
+			lastName !== '' &&
+			dateBirth !== '' &&
+			dateStart !== '' &&
+			street !== '' &&
+			city !== '' &&
+			state !== '' &&
+			zipCode !== '' &&
 			departement !== ''
 		) {
 			const createdEmployee = {
-				// firstName: firstName,
-				// lastName: lastName,
-				// dateBirth: dateBirth.toLocaleDateString(),
-				// dateStart: dateStart.toLocaleDateString(),
-				// street: street,
-				// city: city,
-				// state: state,
-				// zipCode: zipCode,
-				departement: departement,
+				firstName: firstName,
+				lastName: lastName,
+				dateStart: dateStart.toLocaleDateString(),
+				departement: departement.label,
+				dateBirth: dateBirth.toLocaleDateString(),
+				street: street,
+				city: city,
+				state: state.value,
+				zipCode: zipCode,
 			};
 			console.log(createdEmployee);
 			dispatch(createEmployee(createdEmployee));

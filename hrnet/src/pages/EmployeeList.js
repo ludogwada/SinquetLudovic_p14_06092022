@@ -9,8 +9,7 @@ const EmployeeList = () => {
 	return (
 		<>
 			<div className='container'>
-				EmployeeList
-				<Table />
+				<Table datas={list} />
 			</div>
 		</>
 	);

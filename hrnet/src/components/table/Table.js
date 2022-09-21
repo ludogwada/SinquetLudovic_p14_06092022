@@ -5,70 +5,54 @@ import {
 	useGlobalFilter,
 } from 'react-table';
 import React from 'react';
-export function Table() {
-	const data = React.useMemo(
-		() => [
-			{
-				col1: 'Hello',
-				col2: 'World',
-			},
-			{
-				col1: 'react-table',
-				col2: 'rocks',
-			},
-			{
-				col1: 'whatever',
-				col2: 'you want',
-			},
-		],
-		[]
-	);
-
+export function Table(props) {
+	const data = React.useMemo(() => props.datas, []);
+	console.log(data);
 	const columns = React.useMemo(
 		() => [
 			{
 				Header: 'First Name',
-				accessor: 'col1', // accessor is the "key" in the data
+				accessor: 'firstName',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Last Name',
-				accessor: 'col2',
+				accessor: 'lastName',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Start Date',
-				accessor: 'col3',
+				accessor: 'dateStart',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Departement',
-				accessor: 'col4',
+				accessor: 'departement',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Date of Birth',
-				accessor: 'col5',
+				accessor: 'dateBirth',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Street',
-				accessor: 'col6',
+				accessor: 'street',
 				sortType: 'basic',
 			},
 			{
 				Header: 'City',
-				accessor: 'col7',
+				accessor: 'city',
 				sortType: 'basic',
 			},
 			{
 				Header: 'State',
-				accessor: 'col8',
+				accessor: 'state',
 				sortType: 'basic',
 			},
 			{
 				Header: 'Zip Code',
-				accessor: 'col9',
+				accessor: 'zipCode',
 				sortType: 'basic',
 			},
 		],
@@ -92,9 +76,7 @@ export function Table() {
 		canNextPage,
 	} = useTable({ columns, data }, useGlobalFilter, useSortBy, usePagination);
 
-	React.useEffect(() => {
-		console.log(globalFilter);
-	}, [globalFilter]);
+	React.useEffect(() => {}, [globalFilter]);
 
 	return (
 		<article className='table'>
