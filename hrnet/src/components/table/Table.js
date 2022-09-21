@@ -6,7 +6,7 @@ import {
 } from 'react-table';
 import React from 'react';
 export function Table(props) {
-	const data = React.useMemo(() => props.datas, []);
+	const data = React.useMemo(() => props.datas, [props.datas]);
 	console.log(data);
 	const columns = React.useMemo(
 		() => [
@@ -107,7 +107,10 @@ export function Table(props) {
 					/>
 				</section>
 			</header>
-			<table {...getTableProps()} style={{ border: 'solid 1px grey' }}>
+			<table
+				className='table__table'
+				{...getTableProps()}
+				style={{ border: 'solid 1px grey' }}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
 						<tr {...headerGroup.getHeaderGroupProps()}>

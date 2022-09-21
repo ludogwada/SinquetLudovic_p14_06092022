@@ -8,7 +8,7 @@ const EmployeeList = () => {
 	console.log(list);
 	return (
 		<>
-			<div className='container'>
+			<div className='employeeList'>
 				<Table datas={list} />
 			</div>
 		</>

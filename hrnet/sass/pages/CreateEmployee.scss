@@ -26,15 +26,6 @@
 
     }
 
-    &__input {
-        width: 96%;
-        border-color: hsl(0, 0%, 80%);
-        border-radius: 4px;
-        border-style: solid;
-        border-width: 1px;
-
-    }
-
     &__button {
         margin-top: 50px;
         margin-bottom: 10px;
@@ -56,6 +47,7 @@ input {
     border-style: solid;
     border-width: 1px;
     text-align: center;
+    height: 33px;
 
 }
 
@@ -77,5 +69,9 @@ input {
         h3 {
             margin: 5px;
         }
+    }
+
+    input {
+        height: 25px;
     }
 }
