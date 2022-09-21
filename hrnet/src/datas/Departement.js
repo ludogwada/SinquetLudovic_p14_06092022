@@ -1,17 +1,17 @@
 export const departements = [
 	{
-		departement: 'Sales',
+		label: 'Sales',
 	},
 	{
-		departement: 'Marketing',
+		label: 'Marketing',
 	},
 	{
-		departement: 'Engineering',
+		label: 'Engineering',
 	},
 	{
-		departement: 'Human Resources',
+		label: 'Human Resources',
 	},
 	{
-		departement: 'Legal',
+		label: 'Legal',
 	},
 ];

@@ -4,6 +4,7 @@ import { createEmployee } from '../utils/slice/Slice';
 import { statesLocation } from '../datas/StatesLocation';
 import { departements } from '../datas/Departement';
 import ReactDatePicker from '../components/datePicker/DatePicker';
+import Dropdown from '../components/dropDown/Dropdown';
 
 const CreateEmployee = () => {
 	const [firstName, setFirstName] = useState('');
@@ -19,102 +20,117 @@ const CreateEmployee = () => {
 
 	const dispatch = useDispatch();
 
+	const cancelForm = () => {
+		form.reset();
+		setDateBirth('');
+		setDateStart('');
+		setState('');
+		setDepartement('');
+	};
+
 	const SaveUser = (e) => {
 		e.preventDefault();
-		const createdEmployee = {
-			firstName: firstName,
-			lastName: lastName,
-			dateBirth: dateBirth.toLocaleDateString(),
-			dateStart: dateStart.toLocaleDateString(),
-			street: street,
-			city: city,
-			state: state,
-			zipCode: zipCode,
-			departement: departement,
-		};
-		console.log(createdEmployee);
-		dispatch(createEmployee(createdEmployee));
-		form.reset(e);
+		if (
+			// firstName !== '' &&
+			// lastName !== '' &&
+			// dateBirth !== '' &&
+			// dateStart !== '' &&
+			// street !== '' &&
+			// city !== '' &&
+			// state !== '' &&
+			// zipCode !== '' &&
+			departement !== ''
+		) {
+			const createdEmployee = {
+				// firstName: firstName,
+				// lastName: lastName,
+				// dateBirth: dateBirth.toLocaleDateString(),
+				// dateStart: dateStart.toLocaleDateString(),
+				// street: street,
+				// city: city,
+				// state: state,
+				// zipCode: zipCode,
+				departement: departement,
+			};
+			console.log(createdEmployee);
+			dispatch(createEmployee(createdEmployee));
+			cancelForm();
+		}
 	};
 
 	return (
-		<div className='container'>
+		<div className='home'>
 			<form id='form' className='form' onSubmit={SaveUser}>
-				<label htmlFor='FirstName'>
-					Fisrt Name
-					<input
-						type='text'
-						name='FirstName'
-						onChange={(e) => setFirstName(e.target.value)}
-					/>
-				</label>
-				<label htmlFor='lastName'>
-					Last Name
-					<input
-						type='text'
-						name='lastName'
-						onChange={(e) => setLastName(e.target.value)}
-					/>
-				</label>
-				<label htmlFor='dateBirth'>
-					DateBirth
-					<ReactDatePicker date={dateBirth} setDate={setDateBirth} />
-				</label>
-				<label htmlFor='dateStart'>
-					DateStart
-					<ReactDatePicker date={dateStart} setDate={setDateStart} />
-				</label>
-				<section className='form__adress'>
-					<label htmlFor='Street'>
-						Street
-						<input
-							type='text'
-							name='Street'
-							onChange={(e) => setStreet(e.target.value)}
-						/>
-					</label>
-					<label htmlFor='City'>
-						City
-						<input
-							type='text'
-							name='City'
-							onChange={(e) => setCity(e.target.value)}
-						/>
-					</label>
-					<label htmlFor='State'>
-						State
-						<select value={state} onChange={(e) => setState(e.target.value)}>
-							{statesLocation.map((location, index) => {
-								return (
-									<option key={index} value={location.abbreviation}>
-										{location.name}
-									</option>
-								);
-							})}
-						</select>
-					</label>
-					<label htmlFor='ZipCode'>
-						Zip Code
-						<input
-							type='number'
-							name='ZipCode'
-							onChange={(e) => setZipCode(e.target.value)}
-						/>
-					</label>
+				<section className='form__identity'>
+					<section className='form__name'>
+						<label className='form__label' htmlFor='FirstName'>
+							<h3>Fisrt Name</h3>
+							<input
+								type='text'
+								name='FirstName'
+								onChange={(e) => setFirstName(e.target.value)}
+							/>
+						</label>
+						<label className='form__label' htmlFor='lastName'>
+							<h3>Last Name</h3>
+							<input
+								type='text'
+								name='lastName'
+								onChange={(e) => setLastName(e.target.value)}
+							/>
+						</label>
+						<label className='form__label' htmlFor='dateBirth'>
+							<h3>Date of Birth</h3>
+							<ReactDatePicker date={dateBirth} setDate={setDateBirth} />
+						</label>
+						<label className='form__label' htmlFor='dateStart'>
+							<h3>Date Start</h3>
+							<ReactDatePicker date={dateStart} setDate={setDateStart} />
+						</label>
+					</section>
+					<section className='form__address'>
+						<label className='form__label' htmlFor='Street'>
+							<h3>Street</h3>
+							<input
+								type='text'
+								name='Street'
+								onChange={(e) => setStreet(e.target.value)}
+							/>
+						</label>
+						<label className='form__label' htmlFor='City'>
+							<h3>City</h3>
+							<input
+								type='text'
+								name='City'
+								onChange={(e) => setCity(e.target.value)}
+							/>
+						</label>
+						<label className='form__label' htmlFor='State'>
+							<h3>State</h3>
+							<Dropdown
+								value={state}
+								onChange={setState}
+								options={statesLocation}
+								placeholder='Alabama'></Dropdown>
+						</label>
+						<label className='form__label' htmlFor='ZipCode'>
+							<h3>Zip Code</h3>
+							<input
+								type='number'
+								name='ZipCode'
+								onChange={(e) => setZipCode(e.target.value)}
+							/>
+						</label>
+					</section>
 				</section>
-				<label htmlFor='Departement'>
-					Departement
-					<select
+				<label className='form__label' htmlFor='Departement'>
+					<h3>Departement</h3>
+					<Dropdown
+						className='select'
 						value={departement}
-						onChange={(e) => setDepartement(e.target.value)}>
-						{departements.map((dept, index) => {
-							return (
-								<option key={index} value={dept.departement}>
-									{dept.departement}
-								</option>
-							);
-						})}
-					</select>
+						onChange={setDepartement}
+						options={departements}
+						placeholder='Sales'></Dropdown>
 				</label>
 
 				<button className='form__button'>Save New User</button>
