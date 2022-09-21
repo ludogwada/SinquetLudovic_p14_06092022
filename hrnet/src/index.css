@@ -469,7 +469,8 @@ template {
 }
 .form__button {
   margin-top: 50px;
-  width: 150px;
+  margin-bottom: 10px;
+  width: 200px;
 }
 .form__label {
   margin: 5px;

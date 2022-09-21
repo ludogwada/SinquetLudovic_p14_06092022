@@ -133,7 +133,7 @@ const CreateEmployee = () => {
 						placeholder='Sales'></Dropdown>
 				</label>
 
-				<button className='form__button'>Save New User</button>
+				<button className='form__button'>Save New Employee</button>
 			</form>
 		</div>
 	);
