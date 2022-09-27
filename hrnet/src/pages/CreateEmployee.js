@@ -5,6 +5,7 @@ import { statesLocation } from '../datas/StatesLocation';
 import { departements } from '../datas/Departement';
 import ReactDatePicker from '../components/datePicker/DatePicker';
 import Dropdown from '../components/dropDown/Dropdown';
+import { Modal } from 'modal-library-ludogwada';
 
 const CreateEmployee = () => {
 	const [firstName, setFirstName] = useState('');
@@ -17,6 +18,7 @@ const CreateEmployee = () => {
 	const [zipCode, setZipCode] = useState('');
 	const [departement, setDepartement] = useState('');
 	const form = document.getElementById('form');
+	const [showModal, setShowModal] = useState(false);
 
 	const dispatch = useDispatch();
 
@@ -53,6 +55,8 @@ const CreateEmployee = () => {
 				zipCode: zipCode,
 			};
 			console.log(createdEmployee);
+			setShowModal(true);
+
 			dispatch(createEmployee(createdEmployee));
 			cancelForm();
 		}
@@ -135,6 +139,11 @@ const CreateEmployee = () => {
 
 				<button className='form__button'>Save New Employee</button>
 			</form>
+			<Modal
+				showModal={showModal}
+				setShowModal={setShowModal}
+				content='user added'
+			/>
 		</div>
 	);
 };

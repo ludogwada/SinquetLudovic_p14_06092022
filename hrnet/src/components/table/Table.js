@@ -7,7 +7,6 @@ import {
 import React from 'react';
 export function Table(props) {
 	const data = React.useMemo(() => props.datas, [props.datas]);
-	console.log(data);
 	const columns = React.useMemo(
 		() => [
 			{

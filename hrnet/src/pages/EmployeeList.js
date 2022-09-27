@@ -5,7 +5,6 @@ import { Table } from '../components/table/Table';
 const EmployeeList = () => {
 	const list = useSelector((state) => state.employee);
 
-	console.log(list);
 	return (
 		<>
 			<div className='employeeList'>
@@ -16,11 +15,3 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
-
-// <ul>
-// 	{list.map((user, index) => (
-// 		<li key={index}>
-// 			{user.firstName}, {user.lastName}
-// 		</li>
-// 	))}
-// </ul>
