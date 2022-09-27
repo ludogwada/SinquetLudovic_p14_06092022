@@ -64,11 +64,12 @@ const CreateEmployee = () => {
 
 	return (
 		<div className='home'>
+			<h1 className='form__hidden'>Form HRnet</h1>
 			<form id='form' className='form' onSubmit={SaveUser}>
 				<section className='form__identity'>
 					<section className='form__name'>
 						<label className='form__label' htmlFor='FirstName'>
-							<h3>Fisrt Name</h3>
+							<h2>Fisrt Name</h2>
 							<input
 								type='text'
 								name='FirstName'
@@ -76,7 +77,7 @@ const CreateEmployee = () => {
 							/>
 						</label>
 						<label className='form__label' htmlFor='lastName'>
-							<h3>Last Name</h3>
+							<h2>Last Name</h2>
 							<input
 								type='text'
 								name='lastName'
@@ -84,17 +85,17 @@ const CreateEmployee = () => {
 							/>
 						</label>
 						<label className='form__label' htmlFor='dateBirth'>
-							<h3>Date of Birth</h3>
+							<h2>Date of Birth</h2>
 							<ReactDatePicker date={dateBirth} setDate={setDateBirth} />
 						</label>
 						<label className='form__label' htmlFor='dateStart'>
-							<h3>Date Start</h3>
+							<h2>Date Start</h2>
 							<ReactDatePicker date={dateStart} setDate={setDateStart} />
 						</label>
 					</section>
 					<section className='form__address'>
 						<label className='form__label' htmlFor='Street'>
-							<h3>Street</h3>
+							<h2>Street</h2>
 							<input
 								type='text'
 								name='Street'
@@ -102,7 +103,7 @@ const CreateEmployee = () => {
 							/>
 						</label>
 						<label className='form__label' htmlFor='City'>
-							<h3>City</h3>
+							<h2>City</h2>
 							<input
 								type='text'
 								name='City'
@@ -110,7 +111,7 @@ const CreateEmployee = () => {
 							/>
 						</label>
 						<label className='form__label' htmlFor='State'>
-							<h3>State</h3>
+							<h2>State</h2>
 							<Dropdown
 								value={state}
 								onChange={setState}
@@ -118,7 +119,7 @@ const CreateEmployee = () => {
 								placeholder='Alabama'></Dropdown>
 						</label>
 						<label className='form__label' htmlFor='ZipCode'>
-							<h3>Zip Code</h3>
+							<h2>Zip Code</h2>
 							<input
 								type='number'
 								name='ZipCode'
@@ -128,7 +129,7 @@ const CreateEmployee = () => {
 					</section>
 				</section>
 				<label className='form__label' htmlFor='Departement'>
-					<h3>Departement</h3>
+					<h2>Departement</h2>
 					<Dropdown
 						className='select'
 						value={departement}

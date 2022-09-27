@@ -1,11 +1,18 @@
 .table {
-
     width: 100%;
+    padding-top: 20px;
 
     &__header {
         display: flex;
         justify-content: space-between;
         margin: 5px;
+        padding-bottom: 20px;
+
+        &__entries {
+            display: flex;
+            align-items: center;
+        }
+
 
         &__selectList {
             border-radius: 25px;
@@ -23,5 +30,30 @@
     &__table {
         width: 100%;
         padding: 5px;
+    }
+
+    &__pagination {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+
+        &__button {
+            border-radius: 20px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+
+
+    }
+
+    &__pageNumber {
+        display: flex;
+        justify-content: center;
+
+        &__number {
+            width: 60px;
+            text-align: center;
+        }
     }
 }

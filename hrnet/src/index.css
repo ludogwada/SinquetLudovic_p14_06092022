@@ -1,5 +1,6 @@
 /* Color Theme Swatches in Hex */
 /* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
 html {
   line-height: 1.15;
   /* 1 */
@@ -341,7 +342,8 @@ template {
 }
 
 * {
-  font-family: "Raleway", sans-serif;
+  font-family: sans-serif;
+  color: #0D0D0D;
 }
 
 .navBar {
@@ -352,7 +354,7 @@ template {
   text-decoration: none;
   color: black;
   padding: 5px;
-  border: 2px solid #A0D9D9;
+  border: 2px solid #B0C1D9;
   border-radius: 20px;
 }
 
@@ -362,11 +364,17 @@ template {
 
 .table {
   width: 100%;
+  padding-top: 20px;
 }
 .table__header {
   display: flex;
   justify-content: space-between;
   margin: 5px;
+  padding-bottom: 20px;
+}
+.table__header__entries {
+  display: flex;
+  align-items: center;
 }
 .table__header__selectList {
   border-radius: 25px;
@@ -381,6 +389,25 @@ template {
 .table__table {
   width: 100%;
   padding: 5px;
+}
+.table__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+.table__pagination__button {
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.table__pageNumber {
+  display: flex;
+  justify-content: center;
+}
+.table__pageNumber__number {
+  width: 60px;
+  text-align: center;
 }
 
 .select {
@@ -402,6 +429,7 @@ template {
 }
 .header__logo {
   width: 15%;
+  height: 15% x;
   margin-right: 20px;
 }
 .header__title {
@@ -435,20 +463,26 @@ template {
   bottom: 0;
   width: 100%;
   height: 50px;
-  background-color: #A0D9D9;
 }
 .footer__text {
   margin-bottom: 2px;
 }
 
 .home {
-  background-color: #D6FFFF;
+  background-color: #8EA8BF;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px #8EA8BF;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.form__hidden {
+  display: none;
 }
 .form__identity {
   display: flex;
@@ -462,13 +496,14 @@ template {
 .form__address {
   width: 30%;
   padding: 0px 10px 10px 10px;
-  border: 1px solid #A0D9D9;
+  border: 1px solid #B0C1D9;
   border-radius: 10px;
 }
 .form__button {
   margin-top: 50px;
   margin-bottom: 10px;
   width: 200px;
+  border-radius: 20px;
 }
 .form__label {
   margin: 5px;
@@ -504,7 +539,7 @@ input {
   }
 }
 .employeeList {
-  background-color: #D6FFFF;
+  background-color: #8EA8BF;
 }
 
 /*# sourceMappingURL=index.css.map */

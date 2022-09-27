@@ -62,8 +62,8 @@ export function Table(props) {
 		getTableProps,
 		getTableBodyProps,
 		headerGroups,
-		rows,
 		prepareRow,
+		page,
 		pageOptions,
 		setGlobalFilter,
 		state: { pageIndex, pageSize, globalFilter },
@@ -80,7 +80,7 @@ export function Table(props) {
 	return (
 		<article className='table'>
 			<header className='table__header'>
-				<section>
+				<section className='table__header__entries'>
 					Show
 					<select
 						className='table__header__selectList'
@@ -97,13 +97,16 @@ export function Table(props) {
 					entries
 				</section>
 				<section>
-					Search :
-					<input
-						className='table__header__search'
-						type='text'
-						value={globalFilter || ''}
-						onChange={(e) => setGlobalFilter(e.target.value)}
-					/>
+					<label htmlFor='searchBar'>
+						<input
+							placeholder='Search ...'
+							id='searchBar'
+							className='table__header__search'
+							type='text'
+							value={globalFilter || ''}
+							onChange={(e) => setGlobalFilter(e.target.value)}
+						/>
+					</label>
 				</section>
 			</header>
 			<table
@@ -129,7 +132,7 @@ export function Table(props) {
 					))}
 				</thead>
 				<tbody {...getTableBodyProps()}>
-					{rows.map((row) => {
+					{page.map((row) => {
 						prepareRow(row);
 						return (
 							<tr {...row.getRowProps()}>
@@ -151,29 +154,44 @@ export function Table(props) {
 					})}
 				</tbody>
 			</table>
-			<div>
-				<button onClick={() => previousPage()} disabled={!canPreviousPage}>
-					Previous Page
-				</button>
-				<button onClick={() => nextPage()} disabled={!canNextPage}>
-					Next Page
-				</button>
+			<section className='table__pagination'>
 				<div>
+					<button
+						className='table__pagination__button'
+						onClick={() => previousPage()}
+						disabled={!canPreviousPage}>
+						Previous Page
+					</button>
+					<button
+						className='table__pagination__button'
+						onClick={() => nextPage()}
+						disabled={!canNextPage}>
+						Next Page
+					</button>
+				</div>
+				<div className='table__pagination__page'>
 					Page{' '}
 					<em>
 						{pageIndex + 1} of {pageOptions.length}
 					</em>
 				</div>
-				<div>Go to page:</div>
-				<input
-					type='number'
-					defaultValue={pageIndex + 1 || 1}
-					onChange={(e) => {
-						const page = e.target.value ? Number(e.target.value) - 1 : 0;
-						gotoPage(page);
-					}}
-				/>
-			</div>
+
+				<section className='table__pageNumber'>
+					<label htmlFor='pageNumber'>
+						Go to page:
+						<input
+							className='table__pageNumber__number'
+							id='pageNumber'
+							type='number'
+							defaultValue={pageIndex + 1 || 1}
+							onChange={(e) => {
+								const page = e.target.value ? Number(e.target.value) - 1 : 0;
+								gotoPage(page);
+							}}
+						/>
+					</label>
+				</section>
+			</section>
 		</article>
 	);
 }

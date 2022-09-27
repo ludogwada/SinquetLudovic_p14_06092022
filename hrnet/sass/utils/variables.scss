@@ -1,13 +1,20 @@
 /* Color Theme Swatches in Hex */
-$Color-1: #A0D9D9;
-$Color-2: #D6FFFF;
-$Color-3: #e3f0ff;
-$Color-4: #BF9765;
-$Color-5: #D92B04;
+$Color-1: #B0C1D9;
+$Color-2: #3B4B59;
+$Color-3: #8EA8BF;
+$Color-4: #D9BFA9;
+$Color-5: #0D0D0D;
 
 /* Color Theme Swatches in RGBA */
-$Color-1a: rgba(68, 133, 140, 1);
-$Color-2a: rgba(160, 216, 216, 1);
-$Color-3a: rgba(216, 196, 136, 1);
-$Color-4a: rgba(191, 150, 101, 1);
-$Color-5a: rgba(216, 43, 4, 1);
+$Nature-1-rgba: rgba(175, 193, 216, 1);
+$Nature-2-rgba: rgba(58, 75, 89, 1);
+$Nature-3-rgba: rgba(141, 168, 191, 1);
+$Nature-4-rgba: rgba(216, 191, 169, 1);
+$Nature-5-rgba: rgba(12, 12, 12, 1);
+
+/* Color Theme Swatches in HSLA */
+$Nature-1-hsla: hsla(213, 34, 76, 1);
+$Nature-2-hsla: hsla(208, 20, 29, 1);
+$Nature-3-hsla: hsla(208, 28, 65, 1);
+$Nature-4-hsla: hsla(28, 38, 75, 1);
+$Nature-5-hsla: hsla(0, 0, 5, 1);
