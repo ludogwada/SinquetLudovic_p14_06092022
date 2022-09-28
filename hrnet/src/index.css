@@ -396,6 +396,11 @@ template {
   align-items: center;
   padding: 5px;
 }
+.table__pagination__show {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .table__pagination__button {
   border-radius: 20px;
   margin-right: 5px;
@@ -404,10 +409,12 @@ template {
 .table__pageNumber {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 }
 .table__pageNumber__number {
   width: 60px;
   text-align: center;
+  background-color: #B0C1D9;
 }
 
 .select {

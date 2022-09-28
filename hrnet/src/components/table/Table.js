@@ -58,6 +58,17 @@ export function Table(props) {
 		[]
 	);
 
+	const pagination = () => {
+		return (
+			<span>
+				Showing {pageIndex === 0 ? 1 : pageIndex * pageSize + 1} to{' '}
+				{(pageIndex + 1) * pageSize > data.length
+					? data.length
+					: (pageIndex + 1) * pageSize}{' '}
+				of {data.length} entries
+			</span>
+		);
+	};
 	const {
 		getTableProps,
 		getTableBodyProps,
@@ -155,19 +166,22 @@ export function Table(props) {
 				</tbody>
 			</table>
 			<section className='table__pagination'>
-				<div>
-					<button
-						className='table__pagination__button'
-						onClick={() => previousPage()}
-						disabled={!canPreviousPage}>
-						Previous Page
-					</button>
-					<button
-						className='table__pagination__button'
-						onClick={() => nextPage()}
-						disabled={!canNextPage}>
-						Next Page
-					</button>
+				<div className='table__pagination__show'>
+					<div>{pagination()}</div>
+					<div>
+						<button
+							className='table__pagination__button'
+							onClick={() => previousPage()}
+							disabled={!canPreviousPage}>
+							Previous Page
+						</button>
+						<button
+							className='table__pagination__button'
+							onClick={() => nextPage()}
+							disabled={!canNextPage}>
+							Next Page
+						</button>
+					</div>
 				</div>
 				<div className='table__pagination__page'>
 					Page{' '}
