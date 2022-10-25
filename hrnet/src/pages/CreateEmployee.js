@@ -79,9 +79,11 @@ const CreateEmployee = () => {
 				setDepartement={setDepartement}
 			/>
 			<Modal
+				modalStyle='modal'
+				textStyle='text'
 				showModal={showModal}
 				setShowModal={setShowModal}
-				content='user added'
+				content='Employee added'
 			/>
 		</div>
 	);

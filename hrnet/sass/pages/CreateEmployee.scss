@@ -60,6 +60,24 @@ input {
 
 }
 
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20% auto;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: $Color-3;
+}
+
+.text {
+    font-size: x-large;
+    font-weight: 700;
+    color: black;
+}
+
 @media screen and (max-width: 800px) {
     .form {
         &__identity {

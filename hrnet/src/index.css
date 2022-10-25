@@ -527,6 +527,24 @@ input {
   height: 33px;
 }
 
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20% auto;
+  padding: 20px;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #8EA8BF;
+}
+
+.text {
+  font-size: x-large;
+  font-weight: 700;
+  color: black;
+}
+
 @media screen and (max-width: 800px) {
   .form__identity {
     flex-direction: column;
