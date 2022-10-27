@@ -1,6 +1,43 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Faites passer une librairie jQuery vers React
+
+
+
+Vous travaillez pour le département technologique d'une grande société financière, WealthHealth. 
+
+Cette société utilise une application web interne, appelée HRnet, qui gère les dossiers des employés. L'application est ancienne et utilise jQuery côté front end, ce qui entraîne des bugs considérables et une augmentation des plaintes en interne. Votre équipe de développement s'efforce depuis un certain temps déjà de mettre à niveau l'application. 
+## Installation
+
+Install  with npm
+
+```bash
+  npm install 
+```
+    
+## Badges
+
+
+
+![made-with-create-react-app](https://user-images.githubusercontent.com/75996200/162953332-33d7bd5c-9534-48f7-98e6-62a9be776271.svg)
+
+![reduxjs-toolkit](https://img.shields.io/badge/reduxjs%2Ftoolkit-v1.8.5-blue)
+
+![Sass](https://img.shields.io/badge/Sass-v1.54.8-pink)
+## Prerequisites
+
+- [NodeJS](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+
+
+## Lighthouse reports performance
+[![React app Form](https://img.shields.io/badge/React%20app%20form-brightgreen)](https://github.com/ludogwada/SinquetLudovic_p14_06092022/blob/main/performance/Lighthouse%20Report%20Viewer%20HRNET%20React%201.pdf)
+
+[![React app Form](https://img.shields.io/badge/React%20app%20employeeList-brightgreen)](https://github.com/ludogwada/SinquetLudovic_p14_06092022/blob/main/performance/Lighthouse%20Report%20Viewer%20HRNET%20React%202.pdf)
+
+[![React app Form](https://img.shields.io/badge/jQuery%20app%20form-brightgreen)](https://github.com/ludogwada/SinquetLudovic_p14_06092022/blob/main/performance/Lighthouse%20Report%20Viewer%20HRNET%20jQuery%201.pdf)
+
+[![React app Form](https://img.shields.io/badge/jQuery%20app%20employeeList-brightgreen)](https://github.com/ludogwada/SinquetLudovic_p14_06092022/blob/main/performance/Lighthouse%20Report%20Viewer%20HRNET%20jQuery%202.pdf)
+
 
 ## Available Scripts
 
@@ -39,32 +76,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- @Ludogwada](https://www.github.com/ludogwada)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
