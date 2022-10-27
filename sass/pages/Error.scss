@@ -1,0 +1,25 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+
+
+    &__text {
+        font-size: 200px;
+        font-weight: 700;
+        line-height: 300px;
+
+    }
+
+}
+
+.redirection {
+    text-align: center;
+
+    &__h4 {
+        text-decoration: underline;
+    }
+}

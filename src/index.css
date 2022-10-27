@@ -1,6 +1,4 @@
 /* Color Theme Swatches in Hex */
-/* Color Theme Swatches in RGBA */
-/* Color Theme Swatches in HSLA */
 html {
   line-height: 1.15;
   /* 1 */
@@ -565,6 +563,27 @@ input {
 }
 .employeeList {
   background-color: #8EA8BF;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+.error__text {
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 300px;
+}
+
+.redirection {
+  text-align: center;
+}
+.redirection__h4 {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=index.css.map */
