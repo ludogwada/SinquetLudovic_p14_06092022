@@ -1,7 +1,14 @@
 import React from 'react';
 import Select from 'react-select';
 
-export default function App(props) {
+/**
+ * React component that returns a dropdown
+ * @param {*} props
+ * @returns Dropdown
+ * @package react-select
+ */
+
+const Dropdown = (props) => {
 	return (
 		<div className='App'>
 			<Select
@@ -13,4 +20,6 @@ export default function App(props) {
 			/>
 		</div>
 	);
-}
+};
+
+export default Dropdown;

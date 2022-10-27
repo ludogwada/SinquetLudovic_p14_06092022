@@ -4,6 +4,12 @@ import { departements } from '../../datas/Departement';
 import ReactDatePicker from '../datePicker/DatePicker';
 import Dropdown from '../dropDown/Dropdown';
 
+/**
+ * React component that returns a form
+ * @param {*} props
+ * @returns Form
+ */
+
 const Form = (props) => {
 	return (
 		<form id='form' className='form' onSubmit={props.onSubmit}>

@@ -5,7 +5,15 @@ import {
 	useGlobalFilter,
 } from 'react-table';
 import React from 'react';
-export function Table(props) {
+
+/**
+ * React component that returns an array
+ * @param {datas} props
+ * @returns Table
+ * @package react-table
+ */
+
+const Table = (props) => {
 	const data = React.useMemo(() => props.datas, [props.datas]);
 	const columns = React.useMemo(
 		() => [
@@ -208,4 +216,5 @@ export function Table(props) {
 			</section>
 		</article>
 	);
-}
+};
+export default Table;
