@@ -17,6 +17,7 @@ const Dropdown = (props) => {
 				onChange={props.onChange}
 				options={props.options}
 				placeholder={props.placeholder}
+				id={props.id}
 			/>
 		</div>
 	);

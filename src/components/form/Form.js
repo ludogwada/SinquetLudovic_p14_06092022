@@ -18,6 +18,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='FirstName'>
 						<h2>Fisrt Name</h2>
 						<input
+							id='FirstName'
 							type='text'
 							name='FirstName'
 							onChange={(e) => props.setFirstName(e.target.value)}
@@ -26,6 +27,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='lastName'>
 						<h2>Last Name</h2>
 						<input
+							id='lastName'
 							type='text'
 							name='lastName'
 							onChange={(e) => props.setLastName(e.target.value)}
@@ -36,6 +38,7 @@ const Form = (props) => {
 						<ReactDatePicker
 							date={props.dateBirth}
 							setDate={props.setDateBirth}
+							id='dateBirth'
 						/>
 					</label>
 					<label className='form__label' htmlFor='dateStart'>
@@ -43,6 +46,7 @@ const Form = (props) => {
 						<ReactDatePicker
 							date={props.dateStart}
 							setDate={props.setDateStart}
+							id='dateStart'
 						/>
 					</label>
 				</section>
@@ -50,6 +54,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='Street'>
 						<h2>Street</h2>
 						<input
+							id='Street'
 							type='text'
 							name='Street'
 							onChange={(e) => props.setStreet(e.target.value)}
@@ -58,6 +63,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='City'>
 						<h2>City</h2>
 						<input
+							id='City'
 							type='text'
 							name='City'
 							onChange={(e) => props.setCity(e.target.value)}
@@ -66,6 +72,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='State'>
 						<h2>State</h2>
 						<Dropdown
+							id='State'
 							value={props.state}
 							onChange={props.setState}
 							options={statesLocation}
@@ -74,6 +81,7 @@ const Form = (props) => {
 					<label className='form__label' htmlFor='ZipCode'>
 						<h2>Zip Code</h2>
 						<input
+							id='ZipCode'
 							type='number'
 							name='ZipCode'
 							onChange={(e) => props.setZipCode(e.target.value)}
@@ -84,6 +92,7 @@ const Form = (props) => {
 			<label className='form__label' htmlFor='Departement'>
 				<h2>Departement</h2>
 				<Dropdown
+					id='Departement'
 					className='select'
 					value={props.departement}
 					onChange={props.setDepartement}

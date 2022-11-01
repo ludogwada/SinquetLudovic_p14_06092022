@@ -22,6 +22,7 @@ const ReactDatePicker = (props) => {
 				placeholderText='Click to select a date'
 				withPortal
 				todayButton='Today'
+				id={props.id}
 			/>
 		</>
 	);
